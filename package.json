@@ -1,0 +1,7 @@
+{
+  "name": "com.alex.framework",
+  "version": "0.0.1",
+  "displayName": "Mini Framework",
+  "unity": "2021.3",
+  "description": "Tools and utilities"
+}
