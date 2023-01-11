@@ -4,7 +4,8 @@ namespace Codebase.CodeBlocks
 {
     public class CodeRunner : MonoBehaviour
     {
-        [SerializeField] private bool runOnAwake;
+        [SerializeField] private bool runOnAwake = true;
+        [SerializeField] private bool destroyOnComplete = false;
         [SerializeField] private CodeBlock codeBlock;
 
         private void Awake()
@@ -23,6 +24,8 @@ namespace Codebase.CodeBlocks
         private void Completed(bool success)
         {
             Debug.Log($"Code runner completed successfully: {success}");
+
+            if (destroyOnComplete) Destroy(gameObject);
         }
     }
 }

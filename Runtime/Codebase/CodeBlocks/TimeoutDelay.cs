@@ -13,7 +13,6 @@ namespace Codebase.CodeBlocks
         public override void Execute(CodeRunner runner, Action<bool> completed)
         {
             base.Execute(runner, completed);
-
             Timeout();
         }
 
