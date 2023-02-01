@@ -6,6 +6,7 @@ namespace Codebase.CodeBlocks
     [CreateAssetMenu(fileName = "CodeBlockQueue", menuName = "Scriptable Object/Code Blocks/Code Block Queue", order = 0)]
     public class CodeBlockQueue : CodeBlock
     {
+        [SerializeField] private bool stopOnFail = true;
         [SerializeField] private CodeBlock[] blocks;
 
         private int currentIndex = 0;
@@ -33,7 +34,7 @@ namespace Codebase.CodeBlocks
 
         private void BlockCompleted(bool success)
         {
-            if (success)
+            if (success || !stopOnFail)
             {
                 currentIndex++;
                 ExecuteQueue();

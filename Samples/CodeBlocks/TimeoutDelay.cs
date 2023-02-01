@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections;
+using Codebase.CodeBlocks;
 using Codebase.Helpers;
 using UnityEngine;
 
-namespace Codebase.CodeBlocks
+namespace Samples
 {
     [CreateAssetMenu(fileName = "TimeoutDelay", menuName = "Scriptable Object/Code Blocks/Timeout Delay", order = 0)]
     public class TimeoutDelay : CodeBlock
