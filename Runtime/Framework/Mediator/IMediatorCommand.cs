@@ -1,4 +1,4 @@
-namespace Codebase.Mediator
+namespace Framework
 {
     public interface IMediatorCommand
     {

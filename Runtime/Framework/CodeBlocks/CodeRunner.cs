@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Codebase.CodeBlocks
+namespace Framework
 {
     public class CodeRunner : MonoBehaviour
     {

@@ -1,4 +1,4 @@
-using Codebase.Mediator;
+using Framework;
 using UnityEngine;
 
 namespace Samples

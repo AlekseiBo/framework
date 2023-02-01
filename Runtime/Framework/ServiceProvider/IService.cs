@@ -1,4 +1,4 @@
-namespace Codebase.ServiceProvider
+namespace Framework
 {
     public interface IService
     {

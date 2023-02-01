@@ -1,6 +1,6 @@
 using System;
 
-namespace Codebase.Helpers
+namespace Framework
 {
     public static class Extensions
     {

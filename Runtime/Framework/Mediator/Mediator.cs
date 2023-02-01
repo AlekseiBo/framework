@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Codebase.Mediator
+namespace Framework
 {
     public static class Mediator
     {

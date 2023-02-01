@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Codebase.CodeBlocks
+namespace Framework
 {
     [CreateAssetMenu(fileName = "CodeBlockQueue", menuName = "Code Blocks/Code Block Queue", order = 0)]
     public class CodeBlockQueue : CodeBlock

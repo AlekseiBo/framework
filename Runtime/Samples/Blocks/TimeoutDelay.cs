@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
-using Codebase.CodeBlocks;
-using Codebase.Helpers;
+using Framework;
 using UnityEngine;
 
 namespace Samples
