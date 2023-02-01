@@ -1,9 +1,9 @@
-namespace Codebase.Services
+namespace Codebase.Service
 {
     class Services
     {
         private static Services _instance;
-        public static Services All => _instance ?? (_instance = new Services());
+        public static Services All => _instance ??= new Services();
 
         public void RegisterSingle<TService>(TService implementation) where TService : IService =>
             Implementation<TService>.ServiceInstance = implementation;
