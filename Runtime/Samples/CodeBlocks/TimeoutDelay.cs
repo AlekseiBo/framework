@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Samples
 {
-    [CreateAssetMenu(fileName = "TimeoutDelay", menuName = "Scriptable Object/Code Blocks/Timeout Delay", order = 0)]
+    [CreateAssetMenu(fileName = "TimeoutDelay", menuName = "Code Blocks/Timeout Delay", order = 0)]
     public class TimeoutDelay : CodeBlock
     {
         [SerializeField] private float duration;

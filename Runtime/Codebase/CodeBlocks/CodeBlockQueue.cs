@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Codebase.CodeBlocks
 {
-    [CreateAssetMenu(fileName = "CodeBlockQueue", menuName = "Scriptable Object/Code Blocks/Code Block Queue", order = 0)]
+    [CreateAssetMenu(fileName = "CodeBlockQueue", menuName = "Code Blocks/Code Block Queue", order = 0)]
     public class CodeBlockQueue : CodeBlock
     {
         [SerializeField] private bool stopOnFail = true;
