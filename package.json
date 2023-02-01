@@ -3,5 +3,15 @@
   "version": "0.0.2",
   "displayName": "Mini Framework",
   "unity": "2021.3",
-  "description": "Tools and utilities"
+  "description": "Tools and utilities",
+  "samples": [
+    {
+      "displayName": "Mediator Samples",
+      "path": "Samples/Mediator"
+    },
+    {
+      "displayName": "Code Block Samples",
+      "path": "Samples/CodeBlocks"
+    }
+  ]
 }
