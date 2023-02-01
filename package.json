@@ -7,11 +7,11 @@
   "samples": [
     {
       "displayName": "Mediator Samples",
-      "path": "Samples/Mediator"
+      "path": "Samples~/Mediator"
     },
     {
       "displayName": "Code Block Samples",
-      "path": "Samples/CodeBlocks"
+      "path": "Samples~/CodeBlocks"
     }
   ]
 }
