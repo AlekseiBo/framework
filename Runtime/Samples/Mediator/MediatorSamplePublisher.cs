@@ -1,4 +1,5 @@
 using Codebase.Helpers;
+using Codebase.Mediator;
 using UnityEngine;
 
 namespace Samples
@@ -10,7 +11,7 @@ namespace Samples
         private void FixedUpdate()
         {
             var command = new MediatorSampleCommand().With(e => e.TimeValue = Time.time);
-            Codebase.Mediator.Mediator.Publish(command);
+            Mediator.Publish(command);
         }
     }
 }

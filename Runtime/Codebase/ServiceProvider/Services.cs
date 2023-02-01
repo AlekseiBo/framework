@@ -1,4 +1,4 @@
-namespace Runtime.Codebase.ServiceProvider
+namespace Codebase.ServiceProvider
 {
     public class Services
     {
