@@ -4,14 +4,14 @@ namespace Framework
 {
     public class CodeRunner : MonoBehaviour
     {
+        [SerializeField] private bool persistent = false;
         [SerializeField] private bool runOnAwake = true;
         [SerializeField] private bool destroyOnComplete = false;
         [SerializeField] private CodeBlock codeBlock;
 
         private void Awake()
         {
-            DontDestroyOnLoad(gameObject);
-
+            if (persistent) DontDestroyOnLoad(gameObject);
             if (runOnAwake) Run();
         }
 
