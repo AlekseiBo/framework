@@ -16,15 +16,14 @@ namespace Framework
         }
 
         [ContextMenu("Run")]
-        public void Run()
-        {
-            codeBlock.Execute(this, Completed);
-        }
+        public void Run() => codeBlock.Execute(this, Completed);
 
         private void Completed(bool success)
         {
             Debug.Log($"Code runner completed successfully: {success}");
             if (destroyOnComplete) Destroy(gameObject);
         }
+
+        private void OnDestroy() => StopAllCoroutines();
     }
 }
