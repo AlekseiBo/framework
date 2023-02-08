@@ -29,10 +29,12 @@ namespace Framework
 
         public virtual void Set(T newValue)
         {
+            if (currentValue.Equals(newValue)) return;
+
             currentValue = newValue;
             ValueUpdated?.Invoke(this);
         }
 
-        public virtual void Add(T otherValue) => ValueUpdated?.Invoke(this);
+        public virtual void Add(T newValue) => ValueUpdated?.Invoke(this);
     }
 }
