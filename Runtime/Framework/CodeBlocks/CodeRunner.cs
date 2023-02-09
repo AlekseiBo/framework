@@ -25,7 +25,7 @@ namespace Framework
 
         public void LogMessage(string message)
         {
-            if (logging) Debug.Log($"{gameObject.name} {message}");
+            if (logging) Debug.Log($"{gameObject.name}: {message}");
         }
 
         private void Completed(bool success)

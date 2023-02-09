@@ -19,8 +19,12 @@ namespace Framework
         {
             if (Runner != null)
             {
-                var result = success ? "completed" : "failed";
-                Runner.LogMessage($"{name} {result}");
+                if (this != null)
+                {
+                    var result = success ? "completed" : "failed";
+                    Runner.LogMessage($"{name} {result}");
+                }
+
                 completed.Invoke(success);
             }
         }
