@@ -17,7 +17,12 @@ namespace Framework
 
         protected void Complete(bool success)
         {
-            if (Runner != null) completed.Invoke(success);
+            if (Runner != null)
+            {
+                var result = success ? "completed" : "failed";
+                Runner.LogMessage($"{name} {result}");
+                completed.Invoke(success);
+            }
         }
     }
 }
