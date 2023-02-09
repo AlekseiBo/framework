@@ -27,8 +27,7 @@ namespace Framework
             }
             else
             {
-                Debug.Log($"{this.name} completed successfully");
-                Completed?.Invoke(true);
+                Complete(true);
             }
         }
 
@@ -41,7 +40,7 @@ namespace Framework
             }
             else
             {
-                Completed?.Invoke(false);
+                Complete(false);
             }
         }
     }

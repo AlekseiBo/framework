@@ -18,15 +18,13 @@ namespace Samples
 
         private void Timeout()
         {
-            Debug.Log($"Executing {name}");
             Runner.StartCoroutine(WaitForEnd());
         }
 
         private IEnumerator WaitForEnd()
         {
             yield return Utilities.WaitFor(duration);
-            Debug.Log($"Finished in {duration} seconds");
-            Completed?.Invoke(true);
+            Complete(true);
         }
     }
 }

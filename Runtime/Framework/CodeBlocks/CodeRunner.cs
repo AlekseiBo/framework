@@ -20,7 +20,6 @@ namespace Framework
 
         private void Completed(bool success)
         {
-            Debug.Log($"Code runner completed successfully: {success}");
             if (destroyOnComplete) Destroy(gameObject);
         }
 

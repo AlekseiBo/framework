@@ -1,6 +1,6 @@
 {
   "name": "com.bo.framework",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "displayName": "Mini Framework",
   "unity": "2021.3",
   "description": "Tools and utilities"
