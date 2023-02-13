@@ -1,5 +1,5 @@
 {
-    "name": "bo.framework.runtime",
+    "name": "bo.framework",
     "rootNamespace": "",
     "references": [],
     "includePlatforms": [],
