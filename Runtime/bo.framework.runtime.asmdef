@@ -2,16 +2,7 @@
     "name": "bo.framework.runtime",
     "rootNamespace": "",
     "references": [],
-    "includePlatforms": [
-        "Android",
-        "Editor",
-        "iOS",
-        "LinuxStandalone64",
-        "macOSStandalone",
-        "WSA",
-        "WindowsStandalone32",
-        "WindowsStandalone64"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
