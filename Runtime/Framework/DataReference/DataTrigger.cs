@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Framework
+namespace Package.Runtime.Framework.DataReference
 {
     [CreateAssetMenu(fileName = "DataEntry", menuName = "Game Data/Trigger Entry", order = 0)]
     public class DataTrigger : DataEntry<bool>

@@ -1,6 +1,7 @@
+using System;
 using UnityEngine;
 
-namespace Framework
+namespace Package.Runtime.Framework.CodeBlocks
 {
     public class CodeRunner : MonoBehaviour
     {
@@ -20,7 +21,15 @@ namespace Framework
         public void Run()
         {
             LogMessage("Started");
-            codeBlock.Execute(this, Completed);
+            try
+            {
+                codeBlock.Run(this, Completed);
+            }
+            catch (Exception e)
+            {
+                LogMessage(e.Message);
+                Completed(false);
+            }
         }
 
         public void LogMessage(string message)

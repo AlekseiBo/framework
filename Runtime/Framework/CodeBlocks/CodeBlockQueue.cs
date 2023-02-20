@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Framework
+namespace Package.Runtime.Framework.CodeBlocks
 {
     [CreateAssetMenu(fileName = "CodeBlockQueue", menuName = "Code Blocks/Code Block Queue", order = 0)]
     public class CodeBlockQueue : CodeBlock
@@ -11,19 +11,25 @@ namespace Framework
 
         private int currentIndex = 0;
 
-        public override void Execute(CodeRunner runner, Action<bool> completed)
+        public override void Run(CodeRunner runner, Action<bool> completed)
         {
-            base.Execute(runner, completed);
-
             currentIndex = 0;
-            ExecuteQueue();
+            base.Run(runner, completed);
         }
 
-        private void ExecuteQueue()
+        protected override void Execute()
         {
             if (currentIndex < blocks.Length)
             {
-                blocks[currentIndex].Execute(Runner, BlockCompleted);
+                try
+                {
+                    blocks[currentIndex].Run(Runner, BlockCompleted);
+                }
+                catch (Exception e)
+                {
+                    Runner.LogMessage(e.Message);
+                    BlockCompleted(false);
+                }
             }
             else
             {
@@ -36,7 +42,7 @@ namespace Framework
             if (success || !stopOnFail)
             {
                 currentIndex++;
-                ExecuteQueue();
+                Execute();
             }
             else
             {

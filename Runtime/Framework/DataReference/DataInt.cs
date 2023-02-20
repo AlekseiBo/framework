@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Framework
+namespace Package.Runtime.Framework.DataReference
 {
     [CreateAssetMenu(fileName = "DataEntry", menuName = "Game Data/Int Entry", order = 0)]
     public class DataInt : DataEntry<int>

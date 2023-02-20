@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Framework
+namespace Package.Runtime.Framework.CodeBlocks
 {
     public abstract class CodeBlock : ScriptableObject
     {
@@ -9,11 +9,14 @@ namespace Framework
 
         private Action<bool> completed;
 
-        public virtual void Execute(CodeRunner runner, Action<bool> completed)
+        public virtual void Run(CodeRunner runner, Action<bool> completed)
         {
             this.completed = completed;
             Runner = runner;
+            Execute();
         }
+
+        protected abstract void Execute();
 
         protected void Complete(bool success)
         {

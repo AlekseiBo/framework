@@ -1,7 +1,6 @@
-using Framework;
 using UnityEngine;
 
-namespace Samples
+namespace Package.Runtime.Framework.Mediator
 {
     public class MediatorSampleSubscriber : MonoBehaviour
     {

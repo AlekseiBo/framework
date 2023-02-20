@@ -1,6 +1,6 @@
 using System;
 
-namespace Framework
+namespace Package.Runtime.Framework.Helpers
 {
     public static class Extensions
     {

@@ -1,22 +1,15 @@
-﻿using System;
-using System.Collections;
-using Framework;
+﻿using System.Collections;
+using Package.Runtime.Framework.Helpers;
 using UnityEngine;
 
-namespace Samples
+namespace Package.Runtime.Framework.CodeBlocks
 {
     [CreateAssetMenu(fileName = "TimeoutDelay", menuName = "Code Blocks/Timeout Delay", order = 0)]
     public class TimeoutDelay : CodeBlock
     {
         [SerializeField] private float duration;
 
-        public override void Execute(CodeRunner runner, Action<bool> completed)
-        {
-            base.Execute(runner, completed);
-            Timeout();
-        }
-
-        private void Timeout()
+        protected override void Execute()
         {
             Runner.StartCoroutine(WaitForEnd());
         }

@@ -1,6 +1,4 @@
-using Framework;
-
-namespace Samples
+namespace Package.Runtime.Framework.Mediator
 {
     public class MediatorSampleCommand : IMediatorCommand
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Framework
+namespace Package.Runtime.Framework.DataReference
 {
     public abstract class DataEntry<T> : ScriptableObject
     {
