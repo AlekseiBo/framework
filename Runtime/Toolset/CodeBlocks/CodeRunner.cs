@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Toolset.CodeBlocks
+namespace Toolset
 {
     public class CodeRunner : MonoBehaviour
     {

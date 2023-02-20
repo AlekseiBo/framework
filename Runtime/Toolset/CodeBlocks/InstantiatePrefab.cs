@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Toolset.CodeBlocks
+namespace Toolset
 {
     [CreateAssetMenu(fileName = "InstantiatePrefab", menuName = "Code Blocks/Instantiate Prefab", order = 0)]
     public class InstantiatePrefab : CodeBlock

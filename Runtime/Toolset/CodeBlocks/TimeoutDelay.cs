@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Toolset.CodeBlocks
+namespace Toolset
 {
     [CreateAssetMenu(fileName = "TimeoutDelay", menuName = "Code Blocks/Timeout Delay", order = 0)]
     public class TimeoutDelay : CodeBlock
