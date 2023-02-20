@@ -1,4 +1,4 @@
-namespace Package.Runtime.Framework.ServiceProvider
+namespace Toolset.ServiceProvider
 {
     public class Services
     {

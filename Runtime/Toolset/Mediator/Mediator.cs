@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Package.Runtime.Framework.Mediator
+namespace Toolset.Mediator
 {
     public static class Mediator
     {

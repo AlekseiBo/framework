@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Package.Runtime.Framework.CodeBlocks
+namespace Toolset.CodeBlocks
 {
     public abstract class CodeBlock : ScriptableObject
     {

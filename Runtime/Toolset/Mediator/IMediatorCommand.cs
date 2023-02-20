@@ -1,4 +1,4 @@
-namespace Package.Runtime.Framework.Mediator
+namespace Toolset.Mediator
 {
     public interface IMediatorCommand
     {

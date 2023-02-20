@@ -1,8 +1,8 @@
 ﻿using System.Collections;
-using Package.Runtime.Framework.Helpers;
+using Toolset.Helpers;
 using UnityEngine;
 
-namespace Package.Runtime.Framework.CodeBlocks
+namespace Toolset.CodeBlocks
 {
     [CreateAssetMenu(fileName = "TimeoutDelay", menuName = "Code Blocks/Timeout Delay", order = 0)]
     public class TimeoutDelay : CodeBlock
