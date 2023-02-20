@@ -1,4 +1,4 @@
-namespace Toolset
+namespace Toolset.ServiceProvider
 {
     public class Services
     {
