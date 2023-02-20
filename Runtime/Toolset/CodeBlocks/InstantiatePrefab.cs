@@ -9,7 +9,7 @@ namespace Toolset
 
         protected override void Execute()
         {
-            Instantiate(prefab);
+            Instantiate(prefab).With(e => e.name = prefab.name);
             Complete(true);
         }
     }
