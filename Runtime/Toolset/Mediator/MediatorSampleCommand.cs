@@ -1,4 +1,4 @@
-namespace Toolset.Mediator
+namespace Toolset
 {
     public class MediatorSampleCommand : IMediatorCommand
     {

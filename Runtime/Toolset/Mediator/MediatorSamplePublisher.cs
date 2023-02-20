@@ -1,7 +1,6 @@
-using Toolset.Helpers;
 using UnityEngine;
 
-namespace Toolset.Mediator
+namespace Toolset
 {
     public class MediatorSamplePublisher : MonoBehaviour
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Toolset.DataReference
+namespace Toolset
 {
     public abstract class DataEntry<T> : ScriptableObject
     {

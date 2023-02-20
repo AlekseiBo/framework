@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Toolset.DataReference
+namespace Toolset
 {
     [CreateAssetMenu(fileName = "DataEntry", menuName = "Game Data/Float Entry", order = 0)]
     public class DataFloat : DataEntry<float>

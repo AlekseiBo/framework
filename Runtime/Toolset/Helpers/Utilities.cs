@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Toolset.Helpers
+namespace Toolset
 {
     public static class Utilities
     {
