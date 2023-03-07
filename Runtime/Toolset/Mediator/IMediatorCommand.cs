@@ -2,6 +2,6 @@ namespace Toolset
 {
     public interface IMediatorCommand
     {
-        string Type => this.GetType().ToString();
+        string AsString => this.GetType().ToString();
     }
 }
