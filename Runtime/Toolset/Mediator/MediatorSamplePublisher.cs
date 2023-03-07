@@ -9,7 +9,7 @@ namespace Toolset
         private void FixedUpdate()
         {
             var command = new MediatorSampleCommand().With(e => e.TimeValue = Time.time);
-            Mediator.Publish(command);
+            Command.Publish(command);
         }
     }
 }

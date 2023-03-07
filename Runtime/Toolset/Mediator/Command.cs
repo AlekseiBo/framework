@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Toolset
 {
-    public static class Mediator
+    public static class Command
     {
         private static readonly Dictionary<System.Type, System.Delegate> subscribers = new();
 
