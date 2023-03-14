@@ -12,7 +12,7 @@ namespace Toolset
         {
             Instantiate(prefab)
                 .With(e => e.name = prefab.name)
-                .With(e => e.AddComponent<DontDestroyOnLoad>(), when: dontDestroyOnLoad);
+                .With(e => e.AddComponent<DontDestroy>(), when: dontDestroyOnLoad);
             Complete(true);
         }
     }

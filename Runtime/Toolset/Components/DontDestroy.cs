@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Toolset
 {
-    public class DontDestroyOnLoad : MonoBehaviour
+    public class DontDestroy : MonoBehaviour
     {
         private void Awake() => DontDestroyOnLoad(gameObject);
     }
