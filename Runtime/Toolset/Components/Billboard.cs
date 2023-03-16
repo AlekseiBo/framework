@@ -5,17 +5,25 @@ namespace Toolset
     [RequireComponent(typeof(Canvas))]
     public class Billboard : MonoBehaviour
     {
-        private Camera _cam;
+        private Camera mainCam;
 
-        private void Start()
+        private void Start() => CheckCamera();
+
+        private void FixedUpdate()
         {
-            _cam = Camera.main;
-            GetComponent<Canvas>().worldCamera = _cam;
+            if (CheckCamera())
+                transform.rotation = Quaternion.LookRotation(transform.position - mainCam.transform.position, Vector3.up);
         }
 
-        private void Update()
+        private bool CheckCamera()
         {
-            transform.rotation = Quaternion.LookRotation(transform.position - _cam.transform.position, Vector3.up);
+            if (mainCam != null) return true;
+
+            mainCam = Camera.main;
+            if (mainCam == null) return false;
+
+            GetComponent<Canvas>().worldCamera = mainCam;
+            return true;
         }
     }
 }
