@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace Toolset
 {
@@ -20,6 +21,14 @@ namespace Toolset
         {
             if (when) set?.Invoke(self);
             return self;
+        }
+
+        public static void ClearChildren(this Transform transform)
+        {
+            for (int i = transform.childCount - 1; i >= 0; i--)
+            {
+                GameObject.Destroy(transform.GetChild(i).gameObject);
+            }
         }
     }
 }
