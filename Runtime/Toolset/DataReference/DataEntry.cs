@@ -36,5 +36,9 @@ namespace Toolset
         }
 
         public virtual void Add(T newValue) => ValueUpdated?.Invoke(this);
+
+#if UNITY_EDITOR
+        private void OnValidate() => ValueUpdated?.Invoke(this);
+#endif
     }
 }
