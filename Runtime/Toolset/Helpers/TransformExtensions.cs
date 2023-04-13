@@ -12,6 +12,14 @@ namespace Toolset
             }
         }
 
+        public static void SetActiveChild(this Transform transform, int index)
+        {
+            for (var i = 0; i < transform.childCount; i++)
+            {
+                transform.GetChild(i).gameObject.SetActive(i == index);
+            }
+        }
+
         public static void Teleport(this Transform transform, Vector3 position, Quaternion rotation)
         {
             var colliders = transform.GetComponentsInChildren<Collider>();
