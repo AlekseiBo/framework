@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Toolset
 {
@@ -20,6 +21,14 @@ namespace Toolset
         {
             if (when) set?.Invoke(self);
             return self;
+        }
+
+        public static void Increment<K, V>(this Dictionary<K, V> self, K key, V increment) where V : IConvertible
+        {
+            if (self.TryGetValue(key, out var value))
+                self[key] = (V)Convert.ChangeType(Convert.ToDouble(value) + Convert.ToDouble(increment), typeof(V));
+            else
+                self[key] = increment;
         }
     }
 }
