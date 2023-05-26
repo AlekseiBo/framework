@@ -5,6 +5,8 @@ namespace Toolset
 {
     public abstract class CodeBlock : ScriptableObject
     {
+        [SerializeField] protected bool skip;
+
         protected CodeRunner Runner;
 
         private Action<bool> completed;
@@ -13,7 +15,15 @@ namespace Toolset
         {
             this.completed = completed;
             Runner = runner;
-            Execute();
+            if (skip)
+            {
+                Runner.LogMessage($"{name} was skipped");
+                completed.Invoke(true);
+            }
+            else
+            {
+                Execute();
+            }
         }
 
         protected abstract void Execute();
