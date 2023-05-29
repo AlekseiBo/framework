@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
+using Newtonsoft.Json;
 
 namespace Toolset
 {
@@ -24,7 +25,7 @@ namespace Toolset
                 while (!operation.isDone) await Task.Delay(10);
 
                 return webRequest.result == UnityWebRequest.Result.Success ?
-                    JsonUtility.FromJson<T>(webRequest.downloadHandler.text) :
+                    JsonConvert.DeserializeObject<T>(webRequest.downloadHandler.text) :
                     ErrorResponse<T>(webRequest.error);
             }
             catch (Exception ex)
@@ -49,7 +50,7 @@ namespace Toolset
                 while (!operation.isDone) await Task.Delay(10);
 
                 return webRequest.result == UnityWebRequest.Result.Success ?
-                    JsonUtility.FromJson<T>(webRequest.downloadHandler.text) :
+                    JsonConvert.DeserializeObject<T>(webRequest.downloadHandler.text) :
                     ErrorResponse<T>(webRequest.error);
             }
             catch (Exception ex)
