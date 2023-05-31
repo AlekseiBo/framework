@@ -24,9 +24,12 @@ namespace Toolset
 
                 while (!operation.isDone) await Task.Delay(10);
 
-                return webRequest.result == UnityWebRequest.Result.Success ?
-                    JsonConvert.DeserializeObject<T>(webRequest.downloadHandler.text) :
-                    ErrorResponse<T>(webRequest.error);
+                if (webRequest.result != UnityWebRequest.Result.Success) return ErrorResponse<T>(webRequest.error);
+
+                var requestText = webRequest.downloadHandler.text;
+                var response = JsonConvert.DeserializeObject<T>(requestText);
+                if (response == null) Debug.Log($"Parsing error:\n{url}\n{requestText}");
+                return response;
             }
             catch (Exception ex)
             {
