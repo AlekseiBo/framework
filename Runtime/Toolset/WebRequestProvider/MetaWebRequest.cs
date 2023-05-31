@@ -9,7 +9,7 @@ namespace Toolset
 {
     public class MetaWebRequest
     {
-        public static async Task<T> Get<T>(string url, Dictionary<string, string> header = null)
+        public static async Task<T> Get<T>(string url, Dictionary<string, string> header = null, bool log = false)
             where T : MetaResponse
         {
             try
@@ -24,12 +24,11 @@ namespace Toolset
 
                 while (!operation.isDone) await Task.Delay(10);
 
-                if (webRequest.result != UnityWebRequest.Result.Success) return ErrorResponse<T>(webRequest.error);
+                if (log) Debug.Log($"Web request completed:\n{url}\n{webRequest.downloadHandler.text}");
 
-                var requestText = webRequest.downloadHandler.text;
-                var response = JsonConvert.DeserializeObject<T>(requestText);
-                if (response == null) Debug.Log($"Parsing error:\n{url}\n{requestText}");
-                return response;
+                return webRequest.result != UnityWebRequest.Result.Success ?
+                    ErrorResponse<T>(webRequest.error) :
+                    JsonConvert.DeserializeObject<T>(webRequest.downloadHandler.text);
             }
             catch (Exception ex)
             {
@@ -37,7 +36,7 @@ namespace Toolset
             }
         }
 
-        public static async Task<T> Post<T>(string url, Dictionary<string, string> header = null, WWWForm formData = null)
+        public static async Task<T> Post<T>(string url, Dictionary<string, string> header = null, WWWForm formData = null, bool log = false)
             where T : MetaResponse
         {
             try
@@ -52,12 +51,11 @@ namespace Toolset
 
                 while (!operation.isDone) await Task.Delay(10);
 
-                if (webRequest.result != UnityWebRequest.Result.Success) return ErrorResponse<T>(webRequest.error);
+                if (log) Debug.Log($"Web request completed:\n{url}\n{webRequest.downloadHandler.text}");
 
-                var requestText = webRequest.downloadHandler.text;
-                var response = JsonConvert.DeserializeObject<T>(requestText);
-                if (response == null) Debug.Log($"Parsing error:\n{url}\n{requestText}");
-                return response;
+                return webRequest.result != UnityWebRequest.Result.Success ?
+                    ErrorResponse<T>(webRequest.error) :
+                    JsonConvert.DeserializeObject<T>(webRequest.downloadHandler.text);
             }
             catch (Exception ex)
             {
