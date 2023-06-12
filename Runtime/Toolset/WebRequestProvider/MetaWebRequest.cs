@@ -28,7 +28,8 @@ namespace Toolset
 
                 return webRequest.result != UnityWebRequest.Result.Success ?
                     ErrorResponse<T>(webRequest.error) :
-                    JsonConvert.DeserializeObject<T>(webRequest.downloadHandler.text);
+                    JsonUtility.FromJson<T>(webRequest.downloadHandler.text);
+                    // JsonConvert.DeserializeObject<T>(webRequest.downloadHandler.text);
             }
             catch (Exception ex)
             {
@@ -55,7 +56,8 @@ namespace Toolset
 
                 return webRequest.result != UnityWebRequest.Result.Success ?
                     ErrorResponse<T>(webRequest.error) :
-                    JsonConvert.DeserializeObject<T>(webRequest.downloadHandler.text);
+                    JsonUtility.FromJson<T>(webRequest.downloadHandler.text);
+                    // JsonConvert.DeserializeObject<T>(webRequest.downloadHandler.text);
             }
             catch (Exception ex)
             {
