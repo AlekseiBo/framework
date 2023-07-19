@@ -9,7 +9,7 @@ namespace Toolset
 {
     public class MetaWebRequest
     {
-        public static async Task<T> Get<T>(string url, Dictionary<string, string> header = null, bool log = false)
+        public static async Task<T> Get<T>(string url, Dictionary<string, string> header = null, bool log = false, bool useNewtonsoft = false)
             where T : MetaResponse
         {
             try
@@ -26,10 +26,12 @@ namespace Toolset
 
                 if (log) Debug.Log($"Web request completed:\n{url}\n{webRequest.downloadHandler.text}");
 
-                return webRequest.result != UnityWebRequest.Result.Success ?
-                    ErrorResponse<T>(webRequest.error) :
+                if (webRequest.result != UnityWebRequest.Result.Success)
+                    return ErrorResponse<T>(webRequest.error);
+
+                return useNewtonsoft ?
+                    JsonConvert.DeserializeObject<T>(webRequest.downloadHandler.text) :
                     JsonUtility.FromJson<T>(webRequest.downloadHandler.text);
-                    // JsonConvert.DeserializeObject<T>(webRequest.downloadHandler.text);
             }
             catch (Exception ex)
             {
@@ -37,7 +39,7 @@ namespace Toolset
             }
         }
 
-        public static async Task<T> Post<T>(string url, Dictionary<string, string> header = null, WWWForm formData = null, bool log = false)
+        public static async Task<T> Post<T>(string url, Dictionary<string, string> header = null, WWWForm formData = null, bool log = false, bool useNewtonsoft = false)
             where T : MetaResponse
         {
             try
@@ -54,10 +56,12 @@ namespace Toolset
 
                 if (log) Debug.Log($"Web request completed:\n{url}\n{webRequest.downloadHandler.text}");
 
-                return webRequest.result != UnityWebRequest.Result.Success ?
-                    ErrorResponse<T>(webRequest.error) :
+                if (webRequest.result != UnityWebRequest.Result.Success)
+                    return ErrorResponse<T>(webRequest.error);
+
+                return useNewtonsoft ?
+                    JsonConvert.DeserializeObject<T>(webRequest.downloadHandler.text) :
                     JsonUtility.FromJson<T>(webRequest.downloadHandler.text);
-                    // JsonConvert.DeserializeObject<T>(webRequest.downloadHandler.text);
             }
             catch (Exception ex)
             {
